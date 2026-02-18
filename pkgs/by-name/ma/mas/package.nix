@@ -13,23 +13,11 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   __structuredAttrs = true;
 
-  src =
-    let
-      # nix store prefetch-file https://github.com/mas-cli/mas/releases/download/v$VERSION/mas-$VERSION-$ARCH.pkg
-      sources =
-        {
-          aarch64-darwin = {
-            arch = "arm64";
-            hash = "sha256-BZ9UE8H28kjqiMNdLDUUyC9madR4rBV1mLUGyj6ol3Y=";
-          };
-        }
-        .${stdenvNoCC.hostPlatform.system}
-          or (throw "Unsupported system: ${stdenvNoCC.hostPlatform.system}");
-    in
-    fetchurl {
-      url = "https://github.com/mas-cli/mas/releases/download/v${finalAttrs.version}/mas-${finalAttrs.version}-${sources.arch}.pkg";
-      inherit (sources) hash;
-    };
+  # nix store prefetch-file https://github.com/mas-cli/mas/releases/download/v$VERSION/mas-$VERSION-arm64.pkg
+  src = fetchurl {
+    url = "https://github.com/mas-cli/mas/releases/download/v${finalAttrs.version}/mas-${finalAttrs.version}-arm64.pkg";
+    hash = "sha256-BZ9UE8H28kjqiMNdLDUUyC9madR4rBV1mLUGyj6ol3Y=";
+  };
 
   nativeBuildInputs = [
     installShellFiles
