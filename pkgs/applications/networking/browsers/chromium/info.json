@@ -3,7 +3,6 @@
     "version": "150.0.7871.114",
     "chromedriver": {
       "version": "150.0.7871.115",
-      "hash_darwin": "sha256-3QytnwfqPqpYL2TMTMykvT+yAfZqWiRHMbMEK+whe0Q=",
       "hash_darwin_aarch64": "sha256-jJ1URVS4led/1rTODm3t8wewJ8oIOzKIrq1utn5JJ3s="
     },
     "deps": {
