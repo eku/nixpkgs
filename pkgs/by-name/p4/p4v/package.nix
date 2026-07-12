@@ -17,7 +17,6 @@ let
       url = "https://web.archive.org/web/20240612194532id_/https://ftp.perforce.com/perforce/r24.2/bin.macosx12u/P4V.dmg";
       sha256 = "sha256-PS7gfDdWspyL//YWLkrsGi5wh6SIeAry2yef1/V0d6o=";
     };
-    # this is universal
   };
 
   mkDerivation =
